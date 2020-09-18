@@ -96,6 +96,3 @@ Intersect4_ABCD <- intersect(Intersect2_AB,Intersect2_CD)
 Intersect5_ABCDE <- intersect(Intersect4_ABCD,LIHC_SC08P005_GeneList)
 
 
-
-
-
