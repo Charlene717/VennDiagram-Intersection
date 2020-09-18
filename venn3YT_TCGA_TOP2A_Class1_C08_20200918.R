@@ -12,7 +12,6 @@ SCvalueP = 0.8
 SCvalueN = -0.8
 Pvalue = 0.05
 
-
 #A_SARC
 SARC <- read.csv(paste0(FilesName,"/SARC (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 # Test KIRP_List06 <- subset(KIRP,Cytoband == "1q32.1")
