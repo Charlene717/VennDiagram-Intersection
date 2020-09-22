@@ -13,6 +13,20 @@ SCvalueN = -0.8
 Pvalue = 0.05
 
 
+# Filter funtion
+library("data.table")
+Pvalue_LogFCUP_Filter <- function(Cl_Data) {
+  Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation >= SCvalueP|Cl_Data$Spearman.s.Correlation <= SCvalueN,]
+  Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
+  
+  Cl_Data_SC_PV_GeneList <- c(as.matrix(Cl_Data_SC_PV[,1]))
+  return(Cl_Data_SC_PV_GeneList)
+}
+
+Cl_Data <- SARC
+Cl_Data_SC_PV_GeneList <- Pvalue_LogFCUP_Filter(SARC)
+
+
 
 #A_SARC
 SARC <- read.csv(paste0(PathName,"/SARC (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
