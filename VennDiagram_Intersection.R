@@ -24,7 +24,7 @@ Pvalue_SCUpDown_Filter <- function(Cl_Data) {
 }
 
 Cl_Data <- SARC
-Cl_Data_SC_PV_GeneList <- Pvalue_SCUpDown_Filter(SARC)
+Cl_Data_SCUpDow_PV_GeneList <- Pvalue_SCUpDown_Filter(SARC)
 
 
 
