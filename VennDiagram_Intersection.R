@@ -12,6 +12,8 @@ SCvalueP = 0.8
 SCvalueN = -0.8
 Pvalue = 0.05
 
+
+#################################Function######################################
 library("data.table")
 # Filter function: Positive and Negative
 Pvalue_SCPosNeg_Filter <- function(Cl_Data) {
@@ -22,8 +24,10 @@ Pvalue_SCPosNeg_Filter <- function(Cl_Data) {
   return(Cl_Data_SC_PV_GeneList)
 }
 
+## Test
 Cl_Data <- SARC
-Cl_Data_SCPosNeg_PV_GeneList <- Pvalue_SCPosNeg_Filter(SARC)
+Cl_Data_SCPosNeg_PV_GeneList <- Pvalue_SCPosNeg_Filter(Cl_Data)
+## Test
 
 # Filter function: Positive
 Pvalue_SCPos_Filter <- function(Cl_Data) {
@@ -43,8 +47,17 @@ Pvalue_SCNeg_Filter <- function(Cl_Data) {
   return(Cl_Data_SC_PV_GeneList)
 }
 
+#######################################################################
+#A_SARC
+AName <- c("/SARC ")
+A <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneListA <- Pvalue_SCPosNeg_Filter(A)
+
+#B_LGG
 
 
+
+#######################################################################
 
 #A_SARC
 SARC <- read.csv(paste0(PathName,"/SARC (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
