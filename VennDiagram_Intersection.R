@@ -70,56 +70,13 @@ EOri <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),head
 SCPosNeg_PV_GeneListE <- Pvalue_SCPosNeg_Filter(EOri)
 #######################################################################
 
-#A_SARC
-SARC <- read.csv(paste0(PathName,"/SARC (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-# Test KIRP_List06 <- subset(KIRP,Cytoband == "1q32.1")
-# SARC <- c(as.matrix(SARC))
-
-library("data.table")
-SARC_SC08 <- SARC[SARC$Spearman.s.Correlation >= SCvalueP|SARC$Spearman.s.Correlation <= SCvalueN,]
-SARC_SC08P005 <- SARC_SC08[SARC_SC08$p.Value <= Pvalue,]
-
-SARC_SC08P005_GeneList <- c(as.matrix(SARC_SC08P005[,1]))
-
-
-#B_LGG
-LGG <- read.csv(paste0(PathName,"/LGG (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-LGG_SC08 <- LGG[LGG$Spearman.s.Correlation >= SCvalueP|LGG$Spearman.s.Correlation <= SCvalueN,]
-LGG_SC08P005 <- LGG_SC08[LGG_SC08$p.Value <= Pvalue,]
-
-LGG_SC08P005_GeneList <- c(as.matrix(LGG_SC08P005[,1]))
-
-#C_KIRP
-KIRP <- read.csv(paste0(PathName,"/KIRP (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-KIRP_SC08 <- KIRP[KIRP$Spearman.s.Correlation >= SCvalueP|KIRP$Spearman.s.Correlation <= SCvalueN,]
-KIRP_SC08P005 <- KIRP_SC08[KIRP_SC08$p.Value <= Pvalue,]
-
-KIRP_SC08P005_GeneList <- c(as.matrix(KIRP_SC08P005[,1]))
-
-#D_KIRC
-KIRC <- read.csv(paste0(PathName,"/KIRC (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-KIRC_SC08 <- KIRC[KIRC$Spearman.s.Correlation >= SCvalueP|KIRC$Spearman.s.Correlation <= SCvalueN,]
-KIRC_SC08P005 <- KIRC_SC08[KIRC_SC08$p.Value <= Pvalue,]
-
-KIRC_SC08P005_GeneList <- c(as.matrix(KIRC_SC08P005[,1]))
-
-#E_LIHC
-LIHC <- read.csv(paste0(PathName,"/LIHC (TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-LIHC_SC08 <- LIHC[LIHC$Spearman.s.Correlation >= SCvalueP|LIHC$Spearman.s.Correlation <= SCvalueN,]
-LIHC_SC08P005 <- LIHC_SC08[LIHC_SC08$p.Value <= Pvalue,]
-
-LIHC_SC08P005_GeneList <- c(as.matrix(LIHC_SC08P005[,1]))
-
-
-####################################################
-
 library("png")
 
-A <- na.omit(SARC_SC08P005_GeneList)
-B <- na.omit(LGG_SC08P005_GeneList)
-C <- na.omit(KIRP_SC08P005_GeneList)
-D <- na.omit(KIRC_SC08P005_GeneList)
-E <- na.omit(LIHC_SC08P005_GeneList)
+A <- na.omit(SCPosNeg_PV_GeneListA)
+B <- na.omit(SCPosNeg_PV_GeneListB)
+C <- na.omit(SCPosNeg_PV_GeneListC)
+D <- na.omit(SCPosNeg_PV_GeneListD)
+E <- na.omit(SCPosNeg_PV_GeneListE)
 #F <- na.omit(LUAD)
 
 
@@ -127,7 +84,7 @@ E <- na.omit(LIHC_SC08P005_GeneList)
 colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
-             filename = 'Venn20200918Class1SC008V2.png',
+             filename = 'Venn20200922Class1SC008V2.png',
              output=TRUE,
              imagetype="png", 
              scaled = FALSE,
@@ -143,16 +100,16 @@ venn.diagram(x = list(A, B, C, D, E) ,
 # Display saved image
 options(repr.plot.height=12, repr.plot.width= 12)
 library("png")
-pp <- readPNG("Venn20200918Class1SC008V2.png")
+pp <- readPNG("Venn20200922Class1SC008V2.png")
 plot.new() 
 rasterImage(pp,0,0,1,1)
 
 ####################################################
 
-Intersect2_AB <- intersect(SARC_SC08P005_GeneList,LGG_SC08P005_GeneList)
-Intersect2_CD <- intersect(KIRP_SC08P005_GeneList,KIRC_SC08P005_GeneList)
+Intersect2_AB <- intersect(SCPosNeg_PV_GeneListA,SCPosNeg_PV_GeneListB)
+Intersect2_CD <- intersect(SCPosNeg_PV_GeneListC,SCPosNeg_PV_GeneListD)
 Intersect4_ABCD <- intersect(Intersect2_AB,Intersect2_CD)
-Intersect5_ABCDE <- intersect(Intersect4_ABCD,LIHC_SC08P005_GeneList)
+Intersect5_ABCDE <- intersect(Intersect4_ABCD,SCPosNeg_PV_GeneListE)
 
 
 
