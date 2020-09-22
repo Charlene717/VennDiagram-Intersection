@@ -11,6 +11,10 @@ PathName = setwd(getwd())
 SCvalueP = 0.8
 SCvalueN = -0.8
 Pvalue = 0.05
+
+# Color setting
+colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
+
 # Files name
 AName <- c("/SARC ")
 BName <- c("/LGG ")
@@ -78,7 +82,7 @@ C <- na.omit(SCPosNeg_PV_GeneList_C)
 D <- na.omit(SCPosNeg_PV_GeneList_D)
 E <- na.omit(SCPosNeg_PV_GeneList_E)
 
-colorsT <- c("#ed652f", "#a332c2", "#db750f", "#eb4979", "#cc45ac")
+
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
              filename = 'Venn20200922Class1PosNeg.png',
@@ -127,7 +131,7 @@ C <- na.omit(SCPos_PV_GeneList_C)
 D <- na.omit(SCPos_PV_GeneList_D)
 E <- na.omit(SCPos_PV_GeneList_E)
 
-colorsT <- c("#ed652f", "#a332c2", "#db750f", "#eb4979", "#cc45ac")
+
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
              filename = 'Venn20200922Class1Pos.png',
@@ -175,7 +179,7 @@ C <- na.omit(SCNeg_PV_GeneList_C)
 D <- na.omit(SCNeg_PV_GeneList_D)
 E <- na.omit(SCNeg_PV_GeneList_E)
 
-colorsT <- c("#ed652f", "#a332c2", "#db750f", "#eb4979", "#cc45ac")
+
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
              filename = 'Venn20200922Class1Neg.png',
