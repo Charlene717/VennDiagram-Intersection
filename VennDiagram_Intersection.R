@@ -54,29 +54,29 @@ CName <- c("/KIRP ")
 DName <- c("/KIRC ")
 EName <- c("/LIHC ")
 
-AOri <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-SCPosNeg_PV_GeneListA <- Pvalue_SCPosNeg_Filter(AOri)
+APosNeg <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneList_APosNeg <- Pvalue_SCPosNeg_Filter(APosNeg)
 
-BOri <- read.csv(paste0(PathName,BName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-SCPosNeg_PV_GeneListB <- Pvalue_SCPosNeg_Filter(BOri)
+BPosNeg <- read.csv(paste0(PathName,BName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneList_BPosNeg <- Pvalue_SCPosNeg_Filter(BPosNeg)
 
-COri <- read.csv(paste0(PathName,CName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-SCPosNeg_PV_GeneListC <- Pvalue_SCPosNeg_Filter(COri)
+CPosNeg <- read.csv(paste0(PathName,CName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneList_CPosNeg <- Pvalue_SCPosNeg_Filter(CPosNeg)
 
-DOri <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-SCPosNeg_PV_GeneListD <- Pvalue_SCPosNeg_Filter(DOri)
+DPosNeg <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneList_DPosNeg <- Pvalue_SCPosNeg_Filter(DPosNeg)
 
-EOri <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-SCPosNeg_PV_GeneListE <- Pvalue_SCPosNeg_Filter(EOri)
+EPosNeg <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneList_EPosNeg <- Pvalue_SCPosNeg_Filter(EPosNeg)
 #######################################################################
 
 library("png")
 
-A <- na.omit(SCPosNeg_PV_GeneListA)
-B <- na.omit(SCPosNeg_PV_GeneListB)
-C <- na.omit(SCPosNeg_PV_GeneListC)
-D <- na.omit(SCPosNeg_PV_GeneListD)
-E <- na.omit(SCPosNeg_PV_GeneListE)
+A <- na.omit(SCPosNeg_PV_GeneList_APosNeg)
+B <- na.omit(SCPosNeg_PV_GeneList_BPosNeg)
+C <- na.omit(SCPosNeg_PV_GeneList_CPosNeg)
+D <- na.omit(SCPosNeg_PV_GeneList_DPosNeg)
+E <- na.omit(SCPosNeg_PV_GeneList_EPosNeg)
 #F <- na.omit(LUAD)
 
 
@@ -106,10 +106,10 @@ rasterImage(pp,0,0,1,1)
 
 ####################################################
 
-Intersect2_AB <- intersect(SCPosNeg_PV_GeneListA,SCPosNeg_PV_GeneListB)
-Intersect2_CD <- intersect(SCPosNeg_PV_GeneListC,SCPosNeg_PV_GeneListD)
+Intersect2_AB <- intersect(SCPosNeg_PV_GeneList_APosNeg,SCPosNeg_PV_GeneList_BPosNeg)
+Intersect2_CD <- intersect(SCPosNeg_PV_GeneList_CPosNeg,SCPosNeg_PV_GeneList_DPosNeg)
 Intersect4_ABCD <- intersect(Intersect2_AB,Intersect2_CD)
-Intersect5_ABCDE <- intersect(Intersect4_ABCD,SCPosNeg_PV_GeneListE)
+Intersect5_ABCDE <- intersect(Intersect4_ABCD,SCPosNeg_PV_GeneList_EPosNeg)
 
 
 
