@@ -26,7 +26,7 @@ Cl_Data <- SARC
 Cl_Data_SCPosNeg_PV_GeneList <- Pvalue_SCPosNeg_Filter(SARC)
 
 # Filter function: Positive
-Pvalue_SCUpDown_Filter <- function(Cl_Data) {
+Pvalue_SCPos_Filter <- function(Cl_Data) {
   Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation >= SCvalueP,]
   Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
   
