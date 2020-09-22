@@ -12,10 +12,9 @@ SCvalueP = 0.8
 SCvalueN = -0.8
 Pvalue = 0.05
 
-
-# Filter funtion
 library("data.table")
-Pvalue_SCUpDown_Filter <- function(Cl_Data) {
+# Filter function: Positive and Negative
+Pvalue_SCPosNeg_Filter <- function(Cl_Data) {
   Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation >= SCvalueP|Cl_Data$Spearman.s.Correlation <= SCvalueN,]
   Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
   
@@ -24,7 +23,26 @@ Pvalue_SCUpDown_Filter <- function(Cl_Data) {
 }
 
 Cl_Data <- SARC
-Cl_Data_SCUpDow_PV_GeneList <- Pvalue_SCUpDown_Filter(SARC)
+Cl_Data_SCPosNeg_PV_GeneList <- Pvalue_SCPosNeg_Filter(SARC)
+
+# Filter function: Positive
+Pvalue_SCPos_Filter <- function(Cl_Data) {
+  Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation >= SCvalueP,]
+  Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
+  
+  Cl_Data_SC_PV_GeneList <- c(as.matrix(Cl_Data_SC_PV[,1]))
+  return(Cl_Data_SC_PV_GeneList)
+}
+
+# Filter function: Negitive
+Pvalue_SCNeg_Filter <- function(Cl_Data) {
+  Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation <= SCvalueN,]
+  Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
+  
+  Cl_Data_SC_PV_GeneList <- c(as.matrix(Cl_Data_SC_PV[,1]))
+  return(Cl_Data_SC_PV_GeneList)
+}
+
 
 
 
