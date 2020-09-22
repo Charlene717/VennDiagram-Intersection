@@ -48,15 +48,26 @@ Pvalue_SCNeg_Filter <- function(Cl_Data) {
 }
 
 #######################################################################
-#A_SARC
 AName <- c("/SARC ")
-A <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-SCPosNeg_PV_GeneListA <- Pvalue_SCPosNeg_Filter(A)
+BName <- c("/LGG ")
+CName <- c("/KIRP ")
+DName <- c("/KIRC ")
+EName <- c("/LIHC ")
 
-#B_LGG
+AOri <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneListA <- Pvalue_SCPosNeg_Filter(AOri)
 
+BOri <- read.csv(paste0(PathName,BName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneListB <- Pvalue_SCPosNeg_Filter(BOri)
 
+COri <- read.csv(paste0(PathName,CName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneListC <- Pvalue_SCPosNeg_Filter(COri)
 
+DOri <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneListD <- Pvalue_SCPosNeg_Filter(DOri)
+
+EOri <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+SCPosNeg_PV_GeneListE <- Pvalue_SCPosNeg_Filter(EOri)
 #######################################################################
 
 #A_SARC
