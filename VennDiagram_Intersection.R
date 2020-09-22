@@ -78,7 +78,7 @@ C <- na.omit(SCPosNeg_PV_GeneList_C)
 D <- na.omit(SCPosNeg_PV_GeneList_D)
 E <- na.omit(SCPosNeg_PV_GeneList_E)
 
-colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
+colorsT <- c("#ed652f", "#a332c2", "#db750f", "#eb4979", "#cc45ac")
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
              filename = 'Venn20200922Class1PosNeg.png',
@@ -127,7 +127,7 @@ C <- na.omit(SCPos_PV_GeneList_C)
 D <- na.omit(SCPos_PV_GeneList_D)
 E <- na.omit(SCPos_PV_GeneList_E)
 
-colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
+colorsT <- c("#ed652f", "#a332c2", "#db750f", "#eb4979", "#cc45ac")
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
              filename = 'Venn20200922Class1Pos.png',
@@ -175,7 +175,7 @@ C <- na.omit(SCNeg_PV_GeneList_C)
 D <- na.omit(SCNeg_PV_GeneList_D)
 E <- na.omit(SCNeg_PV_GeneList_E)
 
-colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
+colorsT <- c("#ed652f", "#a332c2", "#db750f", "#eb4979", "#cc45ac")
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
              filename = 'Venn20200922Class1Neg.png',
