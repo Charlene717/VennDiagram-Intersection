@@ -205,3 +205,13 @@ Intersect4_ABCD_Neg <- intersect(Intersect2_AB_Neg,Intersect2_CD_Neg)
 Intersect5_ABCDE_Neg <- intersect(Intersect4_ABCD_Neg,SCNeg_PV_GeneList_E)
 ####################################################
 
+## Export the list
+Output_Path = setwd(getwd())
+write.table(Intersect5_ABCDE_PosNeg,file=paste0(Output_Path,"/Intersect5_ABCDE_PosNeg.txt"),row.names = FALSE)
+write.csv(Intersect5_ABCDE_PosNeg,file=paste0(Output_Path,"/Intersect5_ABCDE_PosNeg.csv"),row.names = FALSE)
+
+write.table(Intersect5_ABCDE_Pos,file=paste0(Output_Path,"/Intersect5_ABCDE_Pos.txt"),row.names = FALSE)
+write.csv(Intersect5_ABCDE_Pos,file=paste0(Output_Path,"/Intersect5_ABCDE_Pos.csv"),row.names = FALSE)
+
+write.table(Intersect5_ABCDE_Neg,file=paste0(Output_Path,"/Intersect5_ABCDE_Neg.txt"),row.names = FALSE)
+write.csv(Intersect5_ABCDE_Neg,file=paste0(Output_Path,"/Intersect5_ABCDE_Neg.csv"),row.names = FALSE)
