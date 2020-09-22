@@ -207,11 +207,11 @@ Intersect5_ABCDE_Neg <- intersect(Intersect4_ABCD_Neg,SCNeg_PV_GeneList_E)
 
 ## Export the list
 Output_Path = setwd(getwd())
-write.table(Intersect5_ABCDE_PosNeg,file=paste0(Output_Path,"/Intersect5_ABCDE_PosNeg.txt"),row.names = FALSE,col.names = FALSE)
-write.csv(Intersect5_ABCDE_PosNeg,file=paste0(Output_Path,"/Intersect5_ABCDE_PosNeg.csv"),row.names = FALSE,col.names = FALSE)
+write.table(Intersect5_ABCDE_PosNeg,file=paste0(Output_Path,"/","SCNP",SCvalueP,"_","Intersect5_ABCDE_PosNeg.txt"),row.names = FALSE,col.names = FALSE)
+write.table(Intersect5_ABCDE_PosNeg,file=paste0(Output_Path,"/","SCNP",SCvalueP,"_","Intersect5_ABCDE_PosNeg.csv"),row.names = FALSE,col.names = FALSE)
 
-write.table(Intersect5_ABCDE_Pos,file=paste0(Output_Path,"/Intersect5_ABCDE_Pos.txt"),row.names = FALSE,col.names = FALSE)
-write.csv(Intersect5_ABCDE_Pos,file=paste0(Output_Path,"/Intersect5_ABCDE_Pos.csv"),row.names = FALSE,col.names = FALSE)
+write.table(Intersect5_ABCDE_Pos,file=paste0(Output_Path,"/","SC",SCvalueP,"_","Intersect5_ABCDE_Pos.txt"),row.names = FALSE,col.names = FALSE)
+write.table(Intersect5_ABCDE_Pos,file=paste0(Output_Path,"/","SC",SCvalueP,"_","Intersect5_ABCDE_Pos.csv"),row.names = FALSE,col.names = FALSE)
 
-write.table(Intersect5_ABCDE_Neg,file=paste0(Output_Path,"/Intersect5_ABCDE_Neg.txt"),row.names = FALSE,col.names = FALSE)
-write.csv(Intersect5_ABCDE_Neg,file=paste0(Output_Path,"/Intersect5_ABCDE_Neg.csv"),row.names = FALSE,col.names = FALSE)
+write.table(Intersect5_ABCDE_Neg,file=paste0(Output_Path,"/","SC",SCvalueN,"_","Intersect5_ABCDE_Neg.txt"),row.names = FALSE,col.names = FALSE)
+write.table(Intersect5_ABCDE_Neg,file=paste0(Output_Path,"/","SC",SCvalueN,"_","Intersect5_ABCDE_Neg.csv"),row.names = FALSE,col.names = FALSE)
