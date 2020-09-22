@@ -53,7 +53,14 @@ Pvalue_SCNeg_Filter <- function(Cl_Data) {
 }
 
 #######################################################################
+# Loading the files
+APosNeg <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+BPosNeg <- read.csv(paste0(PathName,BName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+CPosNeg <- read.csv(paste0(PathName,CName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+DPosNeg <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+EPosNeg <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 
+#######################################################################
 
 APosNeg <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 SCPosNeg_PV_GeneList_APosNeg <- Pvalue_SCPosNeg_Filter(APosNeg)
