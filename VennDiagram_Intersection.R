@@ -121,11 +121,11 @@ SCPos_PV_GeneList_E <- Pvalue_SCPos_Filter(EOri)
 
 library("png")
 
-A <- na.omit(SCPosNeg_PV_GeneList_A)
-B <- na.omit(SCPosNeg_PV_GeneList_B)
-C <- na.omit(SCPosNeg_PV_GeneList_C)
-D <- na.omit(SCPosNeg_PV_GeneList_D)
-E <- na.omit(SCPosNeg_PV_GeneList_E)
+A <- na.omit(SCPos_PV_GeneList_A)
+B <- na.omit(SCPos_PV_GeneList_B)
+C <- na.omit(SCPos_PV_GeneList_C)
+D <- na.omit(SCPos_PV_GeneList_D)
+E <- na.omit(SCPos_PV_GeneList_E)
 
 colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
 venn.diagram(x = list(A, B, C, D, E) ,
@@ -151,11 +151,57 @@ plot.new()
 rasterImage(pp,0,0,1,1)
 
 # Intersection
-Intersect2_AB_Pos <- intersect(SCPosNeg_PV_GeneList_A,SCPosNeg_PV_GeneList_B)
-Intersect2_CD_Pos <- intersect(SCPosNeg_PV_GeneList_C,SCPosNeg_PV_GeneList_D)
+Intersect2_AB_Pos <- intersect(SCPos_PV_GeneList_A,SCPos_PV_GeneList_B)
+Intersect2_CD_Pos <- intersect(SCPos_PV_GeneList_C,SCPos_PV_GeneList_D)
 Intersect4_ABCD_Pos <- intersect(Intersect2_AB_Pos,Intersect2_CD_Pos)
-Intersect5_ABCDE_Pos <- intersect(Intersect4_ABCD_Pos,SCPosNeg_PV_GeneList_E)
+Intersect5_ABCDE_Pos <- intersect(Intersect4_ABCD_Pos,SCPos_PV_GeneList_E)
 ####################################################
 
+####################################################
+# Run function: Negative 
+SCNeg_PV_GeneList_A <- Pvalue_SCNeg_Filter(AOri)
+SCNeg_PV_GeneList_B <- Pvalue_SCNeg_Filter(BOri)
+SCNeg_PV_GeneList_C <- Pvalue_SCNeg_Filter(COri)
+SCNeg_PV_GeneList_D <- Pvalue_SCNeg_Filter(DOri)
+SCNeg_PV_GeneList_E <- Pvalue_SCNeg_Filter(EOri)
 
+# Plot the VennDiagram
+
+library("png")
+
+A <- na.omit(SCNeg_PV_GeneList_A)
+B <- na.omit(SCNeg_PV_GeneList_B)
+C <- na.omit(SCNeg_PV_GeneList_C)
+D <- na.omit(SCNeg_PV_GeneList_D)
+E <- na.omit(SCNeg_PV_GeneList_E)
+
+colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
+venn.diagram(x = list(A, B, C, D, E) ,
+             category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
+             filename = 'Venn20200922Class1Neg.png',
+             output=TRUE,
+             imagetype="png", 
+             scaled = FALSE,
+             col = "Gray",
+             fill = colorsT,
+             cat.col = colorsT,
+             cat.cex = 1,
+             margin = 0.15, 
+             sub.just =c(1, 1)
+)
+
+
+# Display saved image
+options(repr.plot.height=12, repr.plot.width= 12)
+library("png")
+pp <- readPNG("Venn20200922Class1Neg.png")
+plot.new() 
+rasterImage(pp,0,0,1,1)
+
+# Intersection
+Intersect2_AB_Neg <- intersect(SCNeg_PV_GeneList_A,SCNeg_PV_GeneList_B)
+Intersect2_CD_Neg <- intersect(SCNeg_PV_GeneList_C,SCNeg_PV_GeneList_D)
+Intersect4_ABCD_Neg <- intersect(Intersect2_AB_Neg,Intersect2_CD_Neg)
+Intersect5_ABCDE_Neg <- intersect(Intersect4_ABCD_Neg,SCNeg_PV_GeneList_E)
+####################################################
 
