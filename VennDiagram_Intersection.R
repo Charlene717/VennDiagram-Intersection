@@ -102,10 +102,10 @@ plot.new()
 rasterImage(pp,0,0,1,1)
 
 # Intersection
-Intersect2_AB <- intersect(SCPosNeg_PV_GeneList_APosNeg,SCPosNeg_PV_GeneList_BPosNeg)
-Intersect2_CD <- intersect(SCPosNeg_PV_GeneList_CPosNeg,SCPosNeg_PV_GeneList_DPosNeg)
-Intersect4_ABCD <- intersect(Intersect2_AB,Intersect2_CD)
-Intersect5_ABCDE <- intersect(Intersect4_ABCD,SCPosNeg_PV_GeneList_EPosNeg)
+Intersect2_AB_PosNeg <- intersect(SCPosNeg_PV_GeneList_APosNeg,SCPosNeg_PV_GeneList_BPosNeg)
+Intersect2_CD_PosNeg <- intersect(SCPosNeg_PV_GeneList_CPosNeg,SCPosNeg_PV_GeneList_DPosNeg)
+Intersect4_ABCD_PosNeg <- intersect(Intersect2_AB_PosNeg,Intersect2_CD_PosNeg)
+Intersect5_ABCDE_PosNeg <- intersect(Intersect4_ABCD_PosNeg,SCPosNeg_PV_GeneList_EPosNeg)
 ####################################################
 
 
