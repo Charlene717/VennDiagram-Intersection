@@ -13,7 +13,7 @@ SCvalueN = -0.8
 Pvalue = 0.05
 
 library("data.table")
-# Filter function: Positive and negitive
+# Filter function: Positive and Negative
 Pvalue_SCPosNeg_Filter <- function(Cl_Data) {
   Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation >= SCvalueP|Cl_Data$Spearman.s.Correlation <= SCvalueN,]
   Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
@@ -33,6 +33,17 @@ Pvalue_SCPos_Filter <- function(Cl_Data) {
   Cl_Data_SC_PV_GeneList <- c(as.matrix(Cl_Data_SC_PV[,1]))
   return(Cl_Data_SC_PV_GeneList)
 }
+
+# Filter function: Negitive
+Pvalue_SCNeg_Filter <- function(Cl_Data) {
+  Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation <= SCvalueN,]
+  Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
+  
+  Cl_Data_SC_PV_GeneList <- c(as.matrix(Cl_Data_SC_PV[,1]))
+  return(Cl_Data_SC_PV_GeneList)
+}
+
+
 
 
 #A_SARC
