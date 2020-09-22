@@ -61,22 +61,14 @@ DPosNeg <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),h
 EPosNeg <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 
 #######################################################################
-
-APosNeg <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+# Run function: Positive and Negative
 SCPosNeg_PV_GeneList_APosNeg <- Pvalue_SCPosNeg_Filter(APosNeg)
-
-BPosNeg <- read.csv(paste0(PathName,BName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 SCPosNeg_PV_GeneList_BPosNeg <- Pvalue_SCPosNeg_Filter(BPosNeg)
-
-CPosNeg <- read.csv(paste0(PathName,CName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 SCPosNeg_PV_GeneList_CPosNeg <- Pvalue_SCPosNeg_Filter(CPosNeg)
-
-DPosNeg <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 SCPosNeg_PV_GeneList_DPosNeg <- Pvalue_SCPosNeg_Filter(DPosNeg)
-
-EPosNeg <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 SCPosNeg_PV_GeneList_EPosNeg <- Pvalue_SCPosNeg_Filter(EPosNeg)
-#######################################################################
+
+# Plot the VennDiagram
 
 library("png")
 
@@ -85,14 +77,11 @@ B <- na.omit(SCPosNeg_PV_GeneList_BPosNeg)
 C <- na.omit(SCPosNeg_PV_GeneList_CPosNeg)
 D <- na.omit(SCPosNeg_PV_GeneList_DPosNeg)
 E <- na.omit(SCPosNeg_PV_GeneList_EPosNeg)
-#F <- na.omit(LUAD)
 
-
-## T1
 colorsT <- c("#ed652f", "#c3db0f", "#db750f", "#eb4979", "#cc45ac")
 venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
-             filename = 'Venn20200922Class1SC008V2.png',
+             filename = 'Venn20200922Class1PosNeg.png',
              output=TRUE,
              imagetype="png", 
              scaled = FALSE,
@@ -108,17 +97,16 @@ venn.diagram(x = list(A, B, C, D, E) ,
 # Display saved image
 options(repr.plot.height=12, repr.plot.width= 12)
 library("png")
-pp <- readPNG("Venn20200922Class1SC008V2.png")
+pp <- readPNG("Venn20200922Class1PosNeg.png")
 plot.new() 
 rasterImage(pp,0,0,1,1)
 
-####################################################
-
+# Intersection
 Intersect2_AB <- intersect(SCPosNeg_PV_GeneList_APosNeg,SCPosNeg_PV_GeneList_BPosNeg)
 Intersect2_CD <- intersect(SCPosNeg_PV_GeneList_CPosNeg,SCPosNeg_PV_GeneList_DPosNeg)
 Intersect4_ABCD <- intersect(Intersect2_AB,Intersect2_CD)
 Intersect5_ABCDE <- intersect(Intersect4_ABCD,SCPosNeg_PV_GeneList_EPosNeg)
-
+####################################################
 
 
 
