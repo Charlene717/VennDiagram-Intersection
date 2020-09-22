@@ -15,7 +15,7 @@ Pvalue = 0.05
 
 # Filter funtion
 library("data.table")
-Pvalue_LogFCUpDown_Filter <- function(Cl_Data) {
+Pvalue_SCUpDown_Filter <- function(Cl_Data) {
   Cl_Data_SC <- Cl_Data[Cl_Data$Spearman.s.Correlation >= SCvalueP|Cl_Data$Spearman.s.Correlation <= SCvalueN,]
   Cl_Data_SC_PV <- Cl_Data_SC[Cl_Data_SC$p.Value <= Pvalue,]
   
@@ -24,7 +24,7 @@ Pvalue_LogFCUpDown_Filter <- function(Cl_Data) {
 }
 
 Cl_Data <- SARC
-Cl_Data_SC_PV_GeneList <- Pvalue_LogFCUpDown_Filter(SARC)
+Cl_Data_SC_PV_GeneList <- Pvalue_SCUpDown_Filter(SARC)
 
 
 
