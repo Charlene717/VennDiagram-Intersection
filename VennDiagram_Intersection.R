@@ -11,7 +11,12 @@ PathName = setwd(getwd())
 SCvalueP = 0.8
 SCvalueN = -0.8
 Pvalue = 0.05
-
+# Files name
+AName <- c("/SARC ")
+BName <- c("/LGG ")
+CName <- c("/KIRP ")
+DName <- c("/KIRC ")
+EName <- c("/LIHC ")
 
 #################################Function######################################
 library("data.table")
@@ -48,11 +53,7 @@ Pvalue_SCNeg_Filter <- function(Cl_Data) {
 }
 
 #######################################################################
-AName <- c("/SARC ")
-BName <- c("/LGG ")
-CName <- c("/KIRP ")
-DName <- c("/KIRC ")
-EName <- c("/LIHC ")
+
 
 APosNeg <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 SCPosNeg_PV_GeneList_APosNeg <- Pvalue_SCPosNeg_Filter(APosNeg)
