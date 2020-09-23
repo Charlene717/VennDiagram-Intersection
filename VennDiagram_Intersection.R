@@ -16,11 +16,11 @@ Pvalue = 0.05
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
 
 # Files name
-AName <- c("/SARC ")
-BName <- c("/LGG ")
-CName <- c("/KIRP ")
-DName <- c("/KIRC ")
-EName <- c("/LIHC ")
+AName <- c("SARC")
+BName <- c("LGG")
+CName <- c("KIRP")
+DName <- c("KIRC")
+EName <- c("LIHC")
 
 #################################Function######################################
 library("data.table")
@@ -58,11 +58,11 @@ Pvalue_SCNeg_Filter <- function(Cl_Data) {
 
 #######################################################################
 # Loading the files
-AOri <- read.csv(paste0(PathName,AName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-BOri <- read.csv(paste0(PathName,BName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-COri <- read.csv(paste0(PathName,CName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-DOri <- read.csv(paste0(PathName,DName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
-EOri <- read.csv(paste0(PathName,EName,"(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+AOri <- read.csv(paste0(PathName,"/",AName," ","(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+BOri <- read.csv(paste0(PathName,"/",BName," ","(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+COri <- read.csv(paste0(PathName,"/",CName," ","(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+DOri <- read.csv(paste0(PathName,"/",DName," ","(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
+EOri <- read.csv(paste0(PathName,"/",EName," ","(TCGA, PanCancer Atlas)_TOP2A.csv"),header = T)
 
 #######################################################################
 # Run function: Positive and Negative
@@ -84,7 +84,7 @@ E <- na.omit(SCPosNeg_PV_GeneList_E)
 
 
 venn.diagram(x = list(A, B, C, D, E) ,
-             category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
+             category.names = c(AName, BName,CName,DName,EName),
              filename = 'Venn20200922Class1PosNeg.png',
              output=TRUE,
              imagetype="png", 
@@ -133,7 +133,7 @@ E <- na.omit(SCPos_PV_GeneList_E)
 
 
 venn.diagram(x = list(A, B, C, D, E) ,
-             category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
+             category.names = c(AName, BName,CName,DName,EName),
              filename = 'Venn20200922Class1Pos.png',
              output=TRUE,
              imagetype="png", 
@@ -181,7 +181,7 @@ E <- na.omit(SCNeg_PV_GeneList_E)
 
 
 venn.diagram(x = list(A, B, C, D, E) ,
-             category.names = c("SARC", "LGG","KIRP","KIRC","LIHC"),
+             category.names = c(AName, BName,CName,DName,EName),
              filename = 'Venn20200922Class1Neg.png',
              output=TRUE,
              imagetype="png", 
