@@ -20,6 +20,7 @@ LWD = 3; # Set the thickness of the line
 LCol = "Black"; # Set the line color
 LabelCol = "Black"; # Set the label color
 Fontface ='bold';
+Transparency = c(0.55,0.55,0.55,0.55,0.55);
 
 # Files name
 AName <- c("SARC")
@@ -91,6 +92,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              output=TRUE,
              cat.fontface = Fontface,
              fontface = Fontface,
+             alpha = Transparency,
              imagetype="png", 
              scaled = FALSE,
              lwd = LWD,
@@ -144,6 +146,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              output=TRUE,
              cat.fontface = Fontface,
              fontface = Fontface,
+             alpha = Transparency,
              imagetype="png", 
              scaled = FALSE,
              col = LCol,
@@ -196,6 +199,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              output=TRUE,
              cat.fontface = Fontface,
              fontface = Fontface,
+             alpha = Transparency,
              imagetype="png", 
              scaled = FALSE,
              col = LCol,
