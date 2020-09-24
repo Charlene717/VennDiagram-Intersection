@@ -33,10 +33,6 @@ Pvalue_SCPosNeg_Filter <- function(Cl_Data) {
   return(Cl_Data_SC_PV_GeneList)
 }
 
-## Test
-Cl_Data <- SARC
-Cl_Data_SCPosNeg_PV_GeneList <- Pvalue_SCPosNeg_Filter(Cl_Data)
-## Test
 
 # Filter function: Positive
 Pvalue_SCPos_Filter <- function(Cl_Data) {
