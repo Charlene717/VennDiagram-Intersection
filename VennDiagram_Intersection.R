@@ -1,4 +1,5 @@
 # https://www.jianshu.com/p/285b4ac66768
+# https://www.rdocumentation.org/packages/VennDiagram/versions/1.6.20/topics/venn.diagram
 # Venn diagram with VennDiagram package
 
 rm(list=ls()) # Clear previous data
@@ -18,6 +19,7 @@ colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
 LWD = 3; # Set the thickness of the line
 LCol = "Black"; # Set the line color
 LabelCol = "Black"; # Set the label color
+Fontface ='bold';
 
 # Files name
 AName <- c("SARC")
@@ -87,6 +89,8 @@ venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c(AName, BName,CName,DName,EName),
              filename = 'Venn20200922Class1PosNeg.png',
              output=TRUE,
+             cat.fontface = Fontface,
+             fontface = Fontface,
              imagetype="png", 
              scaled = FALSE,
              lwd = LWD,
@@ -138,6 +142,8 @@ venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c(AName, BName,CName,DName,EName),
              filename = 'Venn20200922Class1Pos.png',
              output=TRUE,
+             cat.fontface = Fontface,
+             fontface = Fontface,
              imagetype="png", 
              scaled = FALSE,
              col = LCol,
@@ -188,6 +194,8 @@ venn.diagram(x = list(A, B, C, D, E) ,
              category.names = c(AName, BName,CName,DName,EName),
              filename = 'Venn20200922Class1Neg.png',
              output=TRUE,
+             cat.fontface = Fontface,
+             fontface = Fontface,
              imagetype="png", 
              scaled = FALSE,
              col = LCol,
