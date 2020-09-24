@@ -16,6 +16,7 @@ Pvalue = 0.05
 # Color and Size Setting
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
 LWD = 1; # Set the thickness of the line
+LCol = "Gray";
 LabelCol = "#ede8ea";
 
 # Files name
@@ -89,7 +90,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              imagetype="png", 
              scaled = FALSE,
              lwd = LWD,
-             col = "Gray",
+             col = LCol,
              label.col = LabelCol,
              fill = colorsT,
              cat.col = colorsT,
@@ -139,7 +140,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              output=TRUE,
              imagetype="png", 
              scaled = FALSE,
-             col = "Gray",
+             col = LCol,
              label.col = LabelCol,
              fill = colorsT,
              lwd = LWD,
@@ -189,7 +190,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              output=TRUE,
              imagetype="png", 
              scaled = FALSE,
-             col = "Gray",
+             col = LCol,
              label.col = LabelCol,
              fill = colorsT,
              lwd = LWD,
