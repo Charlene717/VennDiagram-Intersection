@@ -14,6 +14,7 @@ Pvalue = 0.05
 
 # Color setting
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
+LWD = 1; # Set the thickness of the line
 
 # Files name
 AName <- c("SARC")
@@ -85,6 +86,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              output=TRUE,
              imagetype="png", 
              scaled = FALSE,
+             lwd = LWD,
              col = "Gray",
              fill = colorsT,
              cat.col = colorsT,
@@ -136,6 +138,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              scaled = FALSE,
              col = "Gray",
              fill = colorsT,
+             lwd = LWD,
              cat.col = colorsT,
              cat.cex = 1,
              margin = 0.15, 
@@ -184,6 +187,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              scaled = FALSE,
              col = "Gray",
              fill = colorsT,
+             lwd = LWD,
              cat.col = colorsT,
              cat.cex = 1,
              margin = 0.15, 
