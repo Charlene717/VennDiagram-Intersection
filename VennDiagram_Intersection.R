@@ -13,9 +13,10 @@ SCvalueP = 0.8
 SCvalueN = -0.8
 Pvalue = 0.05
 
-# Color setting
+# Color and Size Setting
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
 LWD = 1; # Set the thickness of the line
+LabelCol = "#ede8ea";
 
 # Files name
 AName <- c("SARC")
@@ -89,7 +90,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              scaled = FALSE,
              lwd = LWD,
              col = "Gray",
-             label.col = "#ede8ea",
+             label.col = LabelCol,
              fill = colorsT,
              cat.col = colorsT,
              cat.cex = 1,
@@ -139,7 +140,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              imagetype="png", 
              scaled = FALSE,
              col = "Gray",
-             label.col = "#ede8ea",
+             label.col = LabelCol,
              fill = colorsT,
              lwd = LWD,
              cat.col = colorsT,
@@ -189,7 +190,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              imagetype="png", 
              scaled = FALSE,
              col = "Gray",
-             label.col = "#ede8ea",
+             label.col = LabelCol,
              fill = colorsT,
              lwd = LWD,
              cat.col = colorsT,
