@@ -16,11 +16,12 @@ Pvalue = 0.05
 
 # Color and Size Setting
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
-LWD = 3; # Set the thickness of the line
+LWD = 2; # Set the thickness of the line
 LCol = "Black"; # Set the line color
 LabelCol = "Black"; # Set the label color
 Fontface ='bold';
 Transparency = c(0.55,0.55,0.55,0.55,0.55);
+CatCol = c("Black","Black","Black","Black","Black");
 
 # Files name
 AName <- c("SARC")
@@ -99,7 +100,8 @@ venn.diagram(x = list(A, B, C, D, E) ,
              col = LCol,
              label.col = LabelCol,
              fill = colorsT,
-             cat.col = colorsT,
+             cat.col = CatCol,
+             # cat.col = colorsT,
              cat.cex = 1,
              margin = 0.15, 
              sub.just =c(1, 1)
@@ -153,7 +155,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              label.col = LabelCol,
              fill = colorsT,
              lwd = LWD,
-             cat.col = colorsT,
+             cat.col = CatCol,
              cat.cex = 1,
              margin = 0.15, 
              sub.just =c(1, 1)
@@ -206,7 +208,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              label.col = LabelCol,
              fill = colorsT,
              lwd = LWD,
-             cat.col = colorsT,
+             cat.col = CatCol,
              cat.cex = 1,
              margin = 0.15, 
              sub.just =c(1, 1)
