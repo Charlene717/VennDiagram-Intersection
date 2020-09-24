@@ -10,18 +10,19 @@ library(VennDiagram)
 PathName = setwd(getwd())
 
 # Threshold setting
-SCvalueP = 0.8
-SCvalueN = -0.8
+SCvalueP = 0.6
+SCvalueN = -0.6
 Pvalue = 0.05
 
 # Color and Size Setting
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
-LWD = 2; # Set the thickness of the line
-LCol = "Black"; # Set the line color
-LabelCol = "Black"; # Set the label color
+LWD = 4; # Set the thickness of the line
+LCol = "#757575"; # Set the line color
+LabelCol = "#ededed"; # Set the label color
 Fontface ='bold';
 Transparency = c(0.55,0.55,0.55,0.55,0.55);
-CatCol = c("Black","Black","Black","Black","Black");
+CatCol = c("Black", "Black", "Black", "Black", "Black");
+CatCex = 1;
 
 # Files name
 AName <- c("SARC")
@@ -102,7 +103,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              fill = colorsT,
              cat.col = CatCol,
              # cat.col = colorsT,
-             cat.cex = 1,
+             cat.cex = CatCex,
              margin = 0.15, 
              sub.just =c(1, 1)
 )
@@ -156,7 +157,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              fill = colorsT,
              lwd = LWD,
              cat.col = CatCol,
-             cat.cex = 1,
+             cat.cex = CatCex,
              margin = 0.15, 
              sub.just =c(1, 1)
 )
@@ -209,7 +210,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              fill = colorsT,
              lwd = LWD,
              cat.col = CatCol,
-             cat.cex = 1,
+             cat.cex = CatCex,
              margin = 0.15, 
              sub.just =c(1, 1)
 )
