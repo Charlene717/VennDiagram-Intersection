@@ -1,3 +1,4 @@
+# https://www.jianshu.com/p/285b4ac66768
 # Venn diagram with VennDiagram package
 
 rm(list=ls()) # Clear previous data
@@ -88,6 +89,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              scaled = FALSE,
              lwd = LWD,
              col = "Gray",
+             label.col = "#ede8ea",
              fill = colorsT,
              cat.col = colorsT,
              cat.cex = 1,
@@ -137,6 +139,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              imagetype="png", 
              scaled = FALSE,
              col = "Gray",
+             label.col = "#ede8ea",
              fill = colorsT,
              lwd = LWD,
              cat.col = colorsT,
@@ -186,6 +189,7 @@ venn.diagram(x = list(A, B, C, D, E) ,
              imagetype="png", 
              scaled = FALSE,
              col = "Gray",
+             label.col = "#ede8ea",
              fill = colorsT,
              lwd = LWD,
              cat.col = colorsT,
