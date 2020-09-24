@@ -16,8 +16,8 @@ Pvalue = 0.05
 # Color and Size Setting
 colorsT <- c("#ed652f", "#a332c2", "#9e1b47", "#eb4979", "#cc45ac")
 LWD = 1; # Set the thickness of the line
-LCol = "Gray";
-LabelCol = "#ede8ea";
+LCol = "Gray"; # Set the line color
+LabelCol = "#ede8ea"; # Set the label color
 
 # Files name
 AName <- c("SARC")
